@@ -1,0 +1,8 @@
+First Name: John
+Last Name: Ahmed
+Username: johna,john_ah
+Email: john.ahmed@gmail.com
+Pets: max,leo
+Special: ninja,alpha
+Numbers: 7,42
+DOB: 1990-05-21
