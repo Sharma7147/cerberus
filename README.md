@@ -22,106 +22,101 @@ It generates **custom wordlists** from personal/user information (name, username
 ✔️ Minimum/maximum length filters
 ✔️ Charset enforcement (require digits, symbols, uppercase, lowercase)
 
----
 
-## 📦 Installation & Setup
+## 📦 Installation
 
-Run the following commands step by step:
+### Clone the repository
 
 ```bash
-# 1. Clone the repository
 git clone https://github.com/Sharma7147/cerberus.git
 cd cerberus
+```
 
-# 2. Install dependencies
+### Install dependencies
+
+#### 🔹 On **Kali Linux**
+
+Kali blocks global `pip` installs by default. You have two options:
+
+1. **Using a Virtual Environment (Recommended)**
+
+```bash
+python3 -m venv venv
+source venv/bin/activate
 pip install -r requirements.txt
-
 ```
 
----
-
-## 🚀 Usage Examples
-
-### **Help Menu**
+2. **Using pipx (No venv needed)**
 
 ```bash
-python cerberus.py -h
+sudo apt install pipx -y
+pipx install .
 ```
 
-### **Interactive Mode**
+Then you can directly run:
 
 ```bash
-python cerberus.py -i
+cerberus -h
 ```
-
-
 
 ---
 
-### **Direct CLI Example**
+#### 🔹 On **Windows**
+
+```powershell
+pip install -r requirements.txt
+```
+
+---
+
+## 🚀 Usage
+
+You can run CERBERUS in two ways:
+
+### 1. Directly via `run.py` (no installation required)
 
 ```bash
-python cerberus.py \
-  --first John \
-  --last Ahmed \
-  --usernames john123 \
-  --emails john@example.com \
-  --pets rex \
-  --numbers 1234 \
-  --dob 1999-05-10 \
-  --limit 5000 \
-  --min-len 6 \
-  --max-len 20 \
-  --breached \
-  --output john_wordlist.txt
+# Help
+python run.py -h
+
+# Interactive mode
+python run.py -i
+```
+
+### 2. As a command (after installation with pip or pipx)
+
+```bash
+cerberus -h
+cerberus -i
 ```
 
 ---
 
-## ⚙️ CLI Options
+## ⚡ Features
 
-| Option              | Description                            |
-| ------------------- | -------------------------------------- |
-| `--first`           | First name                             |
-| `--last`            | Last name                              |
-| `--usernames`       | List of usernames                      |
-| `--emails`          | List of emails                         |
-| `--pets`            | List of pet names                      |
-| `--numbers`         | Numbers to include                     |
-| `--dob`             | Date of Birth (YYYY-MM-DD)             |
-| `--keywords`        | Extra keywords (company, domain, etc.) |
-| `--limit`           | Max wordlist size (default 5000)       |
-| `--min-len`         | Minimum password length                |
-| `--max-len`         | Maximum password length                |
-| `--breached`        | Include top breached/common passwords  |
-| `--output`          | Output file name                       |
-| `-i, --interactive` | Launch interactive mode                |
+* Generate password list from **names, usernames, emails, pets, DOB, keywords**
+* Apply **leet (1337) speak** and reversals
+* Enforce rules: require **digit / symbol / upper / lower**
+* Control **min/max password length**
+* Optionally include **top breached/common passwords**
+* Save output automatically to a file
 
 ---
 
-## 📂 Example Output
+## 📄 License
 
-```
-john123
-Ahmed@1999
-rex007
-john!123
-passwordJohn
-...
-```
+This project is licensed under the **MIT License** – free for personal and commercial use.
 
 ---
 
-## ⚖️ License
+## ⚠️ Disclaimer
 
-This project is licensed under the **MIT License** – free to use, modify, and distribute.
+This tool is built for **educational and security testing purposes only**.
+The author is **not responsible** for misuse or illegal activity.
 
 ---
 
-## 🔒 Privacy & Disclaimer
 
-* This tool is built **for educational and research purposes only**.
-* Do **not** use it against systems without **explicit permission**.
-* The authors are **not responsible** for any misuse or damage caused.
 
+Do you also want me to add a **step-by-step screenshot/example run** (showing interactive mode in action) for better GitHub presentation?
 
