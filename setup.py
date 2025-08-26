@@ -1,9 +1,8 @@
 from setuptools import setup, find_packages
-from cerberus import __version__
 
 setup(
     name="cerberus-profiler",
-    version=__version__,
+    version="0.1.0",  # directly hardcoded, avoids import issues
     description="CERBERUS – Advanced User Password Profiler",
     author="Yashraj Sharma",
     license="MIT",
