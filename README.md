@@ -1,6 +1,4 @@
-
-
-
+---
 
 # 🔐 CERBERUS – Advanced Password Profiler & Wordlist Generator
 
@@ -13,106 +11,126 @@
  ╚═════╝   ╚══════╝   ╚═╝  ╚═╝   ╚═════╝    ╚══════╝   ╚═╝  ╚═╝    ╚═════╝    ╚══════╝
 ```
 
-CERBERUS is an **advanced password profiler** for **pentesters, bug bounty hunters, and cybersecurity researchers**.
-It generates **custom wordlists** from personal/user information (name, username, email, pets, DOB, etc.), with support for:
+CERBERUS is an **advanced password profiling tool** for
+🔹 **Penetration Testers**
+🔹 **Bug Bounty Hunters**
+🔹 **Cybersecurity Researchers**
 
-✔️ Leetspeak variants
-✔️ Reversals
-✔️ Breached/common password injection
-✔️ Minimum/maximum length filters
-✔️ Charset enforcement (require digits, symbols, uppercase, lowercase)
+It generates **custom password wordlists** from personal/user information like names, usernames, emails, pets, DOBs, and more – ideal for **targeted dictionary attacks** in real-world scenarios.
 
+---
+
+## ✨ Why use CERBERUS?
+
+Unlike generic wordlists (e.g., *rockyou.txt*), CERBERUS builds **personalized, context-aware wordlists** that:
+✔️ Increase cracking success rate
+✔️ Include **leet-speak** variants & reversals
+✔️ Add **breached/common passwords** for realism
+✔️ Apply filters (min/max length, required digits/symbols/uppercase)
+✔️ Work across **Linux, Windows, and macOS**
+
+---
 
 ## 📦 Installation
 
-### Clone the repository
+### 1️⃣ Clone the Repository
 
 ```bash
 git clone https://github.com/Sharma7147/cerberus.git
 cd cerberus
 ```
 
-### Install dependencies
+---
 
-#### 🔹 On **Kali Linux**
+### 2️⃣ Install Dependencies
 
-Kali blocks global `pip` installs by default. You have two options:
+#### 🔹 On **Debian/Ubuntu/Kali Linux**
 
-1. **Using a Virtual Environment (Recommended)**
+Modern Debian/Kali **block global pip installs** (PEP 668).
+You have two safe options:
+
+**(a) Virtual Environment (Recommended)**
 
 ```bash
+sudo apt update
+sudo apt install python3 python3-pip python3-venv -y
+
 python3 -m venv venv
 source venv/bin/activate
+
+pip install --upgrade pip
 pip install -r requirements.txt
+pip install -e .
 ```
 
-2. **Using pipx (No venv needed)**
+**(b) pipx (No venv needed)**
 
 ```bash
 sudo apt install pipx -y
 pipx install .
 ```
 
-Then you can directly run:
-
-```bash
-cerberus -h
-```
-
 ---
 
-#### 🔹 On **Windows**
+#### 🔹 On **Windows (PowerShell)**
+
+Make sure **Python 3.9+** is installed and added to PATH.
 
 ```powershell
+
+# Install dependencies
+pip install --upgrade pip
 pip install -r requirements.txt
+pip install -e .
 ```
 
 ---
 
 ## 🚀 Usage
 
-You can run CERBERUS in two ways:
-
-### 1. Directly via `run.py` (no installation required)
+### Option 1: Run directly (no installation required)
 
 ```bash
-# Help
 python run.py -h
-
-# Interactive mode
 python run.py -i
 ```
 
-### 2. As a command (after installation with pip or pipx)
+---
 
-```bash
-cerberus -h
-cerberus -i
-```
+---
+
 
 ---
 
 ## ⚡ Features
 
-* Generate password list from **names, usernames, emails, pets, DOB, keywords**
-* Apply **leet (1337) speak** and reversals
-* Enforce rules: require **digit / symbol / upper / lower**
-* Control **min/max password length**
-* Optionally include **top breached/common passwords**
-* Save output automatically to a file
+* 🔑 Generate wordlists from **names, usernames, emails, pets, DOBs**
+* 🔄 Apply **leet-speak** (1337) and **reverse strings**
+* 🔒 Enforce password policies (**digits, symbols, upper/lower**)
+* 📏 Control **min/max length**
+* 📂 Save results to a file automatically
+* 🔥 Inject **top breached/common passwords**
 
 ---
 
-## 📄 License
+## 📜 License
 
-This project is licensed under the **MIT License** – free for personal and commercial use.
+This project is licensed under the **MIT License**.
+You are free to use, modify, and distribute it with attribution.
 
 ---
 
 ## ⚠️ Disclaimer
 
-This tool is built for **educational and security testing purposes only**.
-The author is **not responsible** for misuse or illegal activity.
+CERBERUS is intended **for educational and authorized security testing only**.
+The author assumes **no liability for misuse**.
+Using this tool without consent on real systems is **illegal**.
 
+---
 
+## 👨‍💻 Author
 
+**Yashraj Sharma**
+GitHub: [Sharma7147](https://github.com/Sharma7147)
+
+---
