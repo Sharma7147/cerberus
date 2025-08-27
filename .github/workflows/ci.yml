@@ -22,11 +22,34 @@ jobs:
       with:
         python-version: ${{ matrix.python-version }}
 
+    - name: Show python/pip versions (debug)
+      run: |
+        python --version
+        pip --version
+        which python
+
     - name: Install dependencies
       run: |
-        python -m pip install --upgrade pip
+        python -m pip install --upgrade pip setuptools wheel
         pip install -r requirements.txt
-        pip install .   # install your local package
+
+    - name: Install package (editable)
+      run: |
+        pip install -e .
+
+    - name: Smoke import check (quick debug)
+      run: |
+        python - <<'PY'
+import sys
+try:
+    import cerberus
+    print("Imported cerberus package, version:", getattr(cerberus, "__version__", "(no __version__)"))
+    from cerberus.core import generate_passwords
+    print("generate_passwords is", generate_passwords)
+except Exception as e:
+    print("SMOKE IMPORT FAILED:", e)
+    raise
+PY
 
     - name: Run tests
       run: |
