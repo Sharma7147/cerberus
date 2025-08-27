@@ -114,9 +114,5 @@ This project is licensed under the **MIT License** – free for personal and com
 This tool is built for **educational and security testing purposes only**.
 The author is **not responsible** for misuse or illegal activity.
 
----
 
-
-
-Do you also want me to add a **step-by-step screenshot/example run** (showing interactive mode in action) for better GitHub presentation?
 
